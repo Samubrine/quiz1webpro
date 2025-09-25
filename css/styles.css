@@ -1,0 +1,1113 @@
+/* Global styles from WARP.md */
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 56px; /* Adjust for fixed navbar */
+    padding-bottom: 60px; /* Adjust for fixed footer */
+    background-color: #f0f2f5;
+    animation: fadeIn 0.8s ease-in;
+}
+
+/* Navbar theming - Transparent for cinematic effect */
+.navbar {
+    background-color: rgba(52, 58, 64, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    z-index: 1030; /* Bootstrap navbar z-index + extra for safety */
+}
+
+/* Enhanced navbar on scroll */
+.navbar.scrolled {
+    background-color: rgba(52, 58, 64, 0.95) !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+}
+
+/* Navbar brand and links enhancement */
+.navbar-brand {
+    font-weight: 700 !important;
+    font-size: 1.4rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    color: rgba(255,255,255,0.9) !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: white !important;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #343a40;
+    color: white;
+    transition: background-color 0.3s ease;
+    z-index: 1020; /* Below navbar but above content */
+}
+
+/* Custom card styling for a cleaner look */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    animation: slideInUp 0.8s ease-out;
+    animation-fill-mode: both;
+    /* Ensure animation is visible by starting hidden */
+    opacity: 0;
+    transform: translateY(30px);
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: 500;
+}
+
+/* Page content display logic for single-page apps (if needed) */
+.page-content {
+    display: block; /* Show content by default for multi-page setup */
+    animation: fadeIn 0.5s;
+}
+.page-content.active {
+    display: block; /* Show active page */
+}
+
+/* Fade in animation for page transitions */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Custom jumbotron style */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1200x400/007bff/ffffff?text=Welcome!') center/cover no-repeat;
+    padding: 5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Additional animations for enhanced user experience */
+
+/* Staggered animation delays for cards - Fixed selectors */
+.row .col-md-3:nth-child(1) .card { animation-delay: 0.1s; }
+.row .col-md-3:nth-child(2) .card { animation-delay: 0.2s; }
+.row .col-md-3:nth-child(3) .card { animation-delay: 0.3s; }
+.row .col-md-3:nth-child(4) .card { animation-delay: 0.4s; }
+.row .col-md-4:nth-child(1) .card { animation-delay: 0.1s; }
+.row .col-md-4:nth-child(2) .card { animation-delay: 0.2s; }
+.row .col-md-4:nth-child(3) .card { animation-delay: 0.3s; }
+.row .col-md-6:nth-child(1) .card { animation-delay: 0.1s; }
+.row .col-md-6:nth-child(2) .card { animation-delay: 0.2s; }
+
+/* Slide in up animation */
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Button hover animations */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Navbar animation - transitions defined above */
+
+.navbar-brand {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+}
+
+/* Nav link animations */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Image hover effects */
+.card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+    /* Simplify animations on mobile */
+    .col-md-3 .card,
+    .col-md-4 .card,
+    .col-md-6 .card {
+        animation-delay: 0.1s;
+    }
+    
+    .hero-section {
+        padding: 3rem 1rem;
+    }
+    
+    /* Disable hover effects on mobile */
+    .btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+}
+
+/* Footer hover effect - styling applied above */
+
+/* Loading animation for content */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Add subtle animation to page load - applied in main body styles above */
+
+/* Enhanced button styling with preserved color scheme */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: white;
+}
+
+/* Card title animations */
+.card-title {
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+    color: #007bff;
+}
+
+/* Profile page specific styles */
+.profile-details .row {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px 0;
+}
+
+.profile-details .row:last-child {
+    border-bottom: none;
+}
+
+.profile-details strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.description-section p {
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Profile image styling */
+#profile img {
+    border: 3px solid #f8f9fa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#profile img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Mobile responsive adjustments for profile */
+@media (max-width: 768px) {
+    .profile-details .row {
+        padding: 12px 0;
+    }
+    
+    .profile-details .col-sm-4,
+    .profile-details .col-sm-8 {
+        text-align: left;
+    }
+    
+    #profile img {
+        max-width: 200px !important;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Hometown Hero Section Styles */
+.hero-malang {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/malang2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    color: white;
+    animation: heroFadeIn 2s ease-out;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+    letter-spacing: 0.1em;
+    animation: heroSlideUp 1.5s ease-out;
+}
+
+.hero-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    animation: heroSlideUp 1.8s ease-out;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+    opacity: 0.7;
+}
+
+/* Hero Animations */
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Description Section Styles */
+.malang-description {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    min-height: calc(100vh - 120px); /* Account for navbar and footer */
+    padding-bottom: 100px; /* Extra padding to avoid footer overlap */
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #dde6f0;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 2px;
+}
+
+.description-card {
+    border: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.description-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.description-card .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.description-card .card-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.description-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Responsive Design for Hero */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+        letter-spacing: 0.05em;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-malang {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Food Page Hero Section Styles */
+.hero-food {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1626509653291-18d9a934b9db?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.food-description {
+    background: linear-gradient(135deg, #fff5f5, #ffffff);
+    min-height: calc(100vh - 120px); /* Account for navbar and footer */
+    padding-bottom: 100px; /* Extra padding to avoid footer overlap */
+}
+
+/* Tourist Page Hero Section Styles */
+.hero-tourist {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1616724702000-d62ee6558e59?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tourist-description {
+    background: linear-gradient(135deg, #f0f8ff, #ffffff);
+    min-height: calc(100vh - 120px); /* Account for navbar and footer */
+    padding-bottom: 100px; /* Extra padding to avoid footer overlap */
+}
+
+/* Food Card Specific Styles */
+.food-card {
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.food-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(231, 76, 60, 0.3);
+}
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img-overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.food-card:hover .card-img-overlay-gradient {
+    opacity: 1;
+}
+
+.food-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.rating-stars {
+    color: #f39c12;
+    font-size: 1.1rem;
+}
+
+.rating-text {
+    font-size: 0.85rem;
+    color: #e74c3c;
+    font-weight: 600;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.food-intro-card {
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    border: 2px solid rgba(231, 76, 60, 0.1);
+    transform: scale(0.95);
+    animation: scaleIn 1s ease-out 0.5s forwards;
+}
+
+/* Tourist Card Specific Styles */
+.tourist-card {
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tourist-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);
+}
+
+.tourist-card:hover .card-img-overlay-gradient {
+    opacity: 1;
+}
+
+.attraction-info {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.info-badge {
+    font-size: 0.8rem;
+    color: #3498db;
+    font-weight: 600;
+    background: rgba(52, 152, 219, 0.15);
+    padding: 4px 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.tourist-intro-card {
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    border: 2px solid rgba(52, 152, 219, 0.1);
+    transform: scale(0.95);
+    animation: scaleIn 1s ease-out 0.5s forwards;
+}
+
+/* Scale in animation for intro cards */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Enhanced staggered animations for food and tourist pages */
+.food-description .row .col-md-4:nth-child(1) .card { animation-delay: 0.2s; }
+.food-description .row .col-md-4:nth-child(2) .card { animation-delay: 0.4s; }
+.food-description .row .col-md-4:nth-child(3) .card { animation-delay: 0.6s; }
+
+.tourist-description .row .col-md-6:nth-child(1) .card { animation-delay: 0.2s; }
+.tourist-description .row .col-md-6:nth-child(2) .card { animation-delay: 0.4s; }
+.tourist-description .row:nth-child(2) .col-md-6:nth-child(1) .card { animation-delay: 0.6s; }
+.tourist-description .row:nth-child(2) .col-md-6:nth-child(2) .card { animation-delay: 0.8s; }
+
+/* Responsive adjustments for food and tourist pages */
+@media (max-width: 768px) {
+    .hero-food,
+    .hero-tourist {
+        background-attachment: scroll;
+    }
+    
+    .food-card:hover,
+    .tourist-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .rating-text,
+    .info-badge {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+    
+    .food-description .row .col-md-4 .card,
+    .tourist-description .row .col-md-6 .card {
+        animation-delay: 0.1s;
+    }
+}
+
+@media (max-width: 576px) {
+    .food-rating {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .attraction-info {
+        justify-content: center;
+    }
+}
+
+/* Landing Page Hero Section Styles */
+.hero-landing {
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://lh5.googleusercontent.com/proxy/vwetz6xWpIdSsLE44BXaZQmo1G1ERvvTbS2w7H3JyvMIg4jMM462Kxlyj8tUYlwmZWJUwuNfG2KpR4Bxsy7hIf46IJxJEBVAtBqoGrohttps://wallpapershome.com/images/pages/pic_h/26426.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-hero-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.6);
+    color: white;
+}
+
+.btn-hero-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* Overview Section Styles */
+.overview-section {
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+    padding: 100px 0 140px 0; /* Extra bottom padding to avoid footer overlap */
+}
+
+.overview-item {
+    margin-bottom: 120px;
+    position: relative;
+    overflow: visible; /* Changed from hidden to show white container shadows */
+    padding: 20px 0; /* Add vertical padding for better spacing */
+}
+
+.overview-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.8s ease;
+}
+
+.overview-item:hover::before {
+    left: 100%;
+}
+
+.overview-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.overview-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+.overview-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+    animation: slideInLeft 0.8s ease-out 0.4s both;
+}
+
+.btn-overview {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    animation: slideInLeft 0.8s ease-out 0.6s both;
+}
+
+.btn-overview:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+    color: white;
+}
+
+.overview-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+.overview-visual {
+    animation: slideInRight 0.8s ease-out 0.3s both;
+}
+
+.visual-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: white;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.visual-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.visual-card img {
+    width: 100%;
+    height: 280px; /* Slightly reduced to account for container padding */
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 15px; /* Rounded corners for the image inside the white container */
+}
+
+.visual-card:hover img {
+    transform: scale(1.05);
+}
+
+.visual-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 30px 20px 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.visual-card:hover .visual-overlay {
+    transform: translateY(0);
+}
+
+.visual-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Reverse layout for alternating sections */
+.overview-item.reverse .overview-content {
+    animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+.overview-item.reverse .overview-visual {
+    animation: slideInLeft 0.8s ease-out 0.3s both;
+}
+
+.overview-item.reverse .overview-badge,
+.overview-item.reverse .overview-title,
+.overview-item.reverse .overview-description,
+.overview-item.reverse .btn-overview {
+    animation-name: slideInRight;
+}
+
+/* CTA Section Styles */
+.cta-section {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://placehold.co/1920x600/2c3e50/ffffff?text=Call+to+Action') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary,
+.btn-cta-secondary {
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-cta-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.5);
+    color: white;
+}
+
+.btn-cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.btn-cta-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* Animation Keyframes for Landing Page */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Landing Page */
+@media (max-width: 768px) {
+    .hero-landing {
+        background-attachment: scroll;
+        padding: 0 1rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .overview-title {
+        font-size: 2.2rem;
+    }
+    
+    .overview-item {
+        margin-bottom: 80px;
+    }
+    
+    .overview-item.reverse .col-lg-6:first-child {
+        order: 2;
+    }
+    
+    .overview-item.reverse .col-lg-6:last-child {
+        order: 1;
+    }
+    
+    .cta-title {
+        font-size: 2.2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .overview-title {
+        font-size: 1.8rem;
+    }
+    
+    .overview-description {
+        font-size: 1rem;
+    }
+    
+    .cta-title {
+        font-size: 1.8rem;
+    }
+    
+    .cta-description {
+        font-size: 1rem;
+    }
+}

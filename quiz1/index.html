@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming Quiz - Personal Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts (Roboto + Playfair Display) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">quiz1webpro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" data-page="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html" data-page="profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hometown.html" data-page="hometown">Hometown</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="food.html" data-page="food">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tourist.html" data-page="tourist">Tourist Attractions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-landing" id="hero-landing">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">DISCOVER</div>
+            <h1 class="hero-title">The Journey</h1>
+            <p class="hero-subtitle">It's not only an assignment, it's due <strong>next week</strong>.</p>
+            <div class="hero-cta">
+                <a href="#overview" class="btn btn-hero-primary">Explore</a>
+                <a href="profile.html" class="btn btn-hero-secondary">Profile</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section" id="overview">
+        <div class="container">
+            
+            <!-- Profile Overview -->
+            <div class="overview-item" data-bg="profile">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="overview-content">
+                            <div class="overview-badge">PERSONAL</div>
+                            <h2 class="overview-title">About Me</h2>
+                            <p class="overview-description">
+                                I’m a student leader and team director with experience leading 300+ individuals, focusing on building scalable solutions and optimizing client experiences. I thrive in dynamic environments by creating systems, taking initiative, and continuously learning through self-improvement and emerging technologies to contribute to impactful innovations.
+                            </p>
+                            <a href="profile.html" class="btn btn-overview">View Full Profile</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="overview-visual profile-visual">
+                            <div class="visual-card">
+                                <img src="../images/short_profile.jpg" alt="Profile">
+                                <div class="visual-overlay">
+                                    <span class="visual-text">Student • Developer • Dreamer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hometown Overview -->
+            <div class="overview-item reverse" data-bg="hometown">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="overview-visual hometown-visual">
+                            <div class="visual-card">
+                                <img src="../images/malang.jpg" alt="Malang">
+                                <div class="visual-overlay">
+                                    <span class="visual-text">Kota Apel • Culture • Heritage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="overview-content">
+                            <div class="overview-badge">HERITAGE</div>
+                            <h2 class="overview-title">Malang, Kota Apel</h2>
+                            <p class="overview-description">
+                                Kota yang dikenal sebagai "Kota Apel" ini menawarkan pesona alam pegunungan 
+                                yang sejuk, arsitektur kolonial yang memukau, dan kehidupan mahasiswa yang 
+                                dinamis. Temukan keunikan budaya dan sejarah yang membentuk identitas 
+                                kota kelahiran saya.
+                            </p>
+                            <a href="hometown.html" class="btn btn-overview">Eksplorasi Malang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Overview -->
+            <div class="overview-item" data-bg="food">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="overview-content">
+                            <div class="overview-badge">CULINARY</div>
+                            <h2 class="overview-title">Kelezatan Kuliner</h2>
+                            <p class="overview-description">
+                                Jelajahi cita rasa autentik kuliner Jawa Timur yang kaya akan rempah dan 
+                                tradisi turun-temurun. Dari Rujak Cingur hingga Sate Klopo, 
+                                setiap hidangan menceritakan kisah budaya yang mendalam dan 
+                                pengalaman kuliner yang tak terlupakan.
+                            </p>
+                            <a href="food.html" class="btn btn-overview">Cicipi Kelezatan</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="overview-visual food-visual">
+                            <div class="visual-card">
+                                <img src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/6025f76a-8a20-43a6-bd64-0c75ec8cf0bb_restaurant-image_1589357317336.jpg" alt="Food">
+                                <div class="visual-overlay">
+                                    <span class="visual-text">Traditional • Authentic • Delicious</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tourist Overview -->
+            <div class="overview-item reverse" data-bg="tourist">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="overview-visual tourist-visual">
+                            <div class="visual-card">
+                                <img src="https://tugujatim.id/wp-content/uploads/2023/11/55a354ad-961f-4783-81f0-f122353ac6b6-1-scaled.jpeg" alt="Tourism">
+                                <div class="visual-overlay">
+                                    <span class="visual-text">Adventure • Nature • Culture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="overview-content">
+                            <div class="overview-badge">ADVENTURE</div>
+                            <h2 class="overview-title">Destinasi Menawan</h2>
+                            <p class="overview-description">
+                                Malang menyimpan pesona wisata yang beragam, mulai dari air terjun yang 
+                                memukau, taman rekreasi modern, hingga museum yang edukatif. 
+                                Setiap destinasi menawarkan pengalaman unik yang memadukan keindahan 
+                                alam dengan sentuhan modern yang menawan.
+                            </p>
+                            <a href="tourist.html" class="btn btn-overview">Jelajahi Destinasi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <!-- <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Siap Memulai Perjalanan?</h2>
+                        <p class="cta-description">
+                            Bergabunglah dalam eksplorasi lengkap tentang kehidupan, budaya, 
+                            dan pengalaman yang telah membentuk perjalanan hidup saya hingga saat ini.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="profile.html" class="btn btn-cta-primary">Mulai dari Profile</a>
+                            <a href="hometown.html" class="btn btn-cta-secondary">Atau Jelajahi Malang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer fixed-bottom py-3">
+        <div class="container text-center">
+            <span>&copy; 2024 Quiz1WebPro - Web Programming Course Project</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

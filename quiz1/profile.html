@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Web Programming Quiz</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts (Roboto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">quiz1webpro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-page="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html" data-page="profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hometown.html" data-page="hometown">Hometown</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="food.html" data-page="food">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tourist.html" data-page="tourist">Tourist Attractions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container py-5">
+        <!-- Profile Section -->
+        <div id="profile">
+            <h2 class="mb-4 text-center">Personal Profile</h2>
+            
+            <!-- Profile Card -->
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">About Me</h5>
+                </div>
+                <div class="card-body p-4">
+                    <!-- Profile Info Row -->
+                    <div class="row">
+                        <!-- Profile Photo Column -->
+                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                            <img src="../images/profile.jpeg" 
+                                 alt="Profile Photo" 
+                                 class="img-fluid rounded shadow"
+                                 style="max-width: 280px; height: auto;">
+                        </div>
+                        
+                        <!-- Identity Information Column -->
+                        <div class="col-md-8">
+                            <div class="profile-details">
+                                <div class="row mb-3">
+                                    <div class="col-sm-4"><strong>Name:</strong></div>
+                                    <div class="col-sm-8">Mikail Ibrahim Hakim</div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4"><strong>Student ID:</strong></div>
+                                    <div class="col-sm-8">5025241046</div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4"><strong>Major:</strong></div>
+                                    <div class="col-sm-8">Informatics Engineering</div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4"><strong>University:</strong></div>
+                                    <div class="col-sm-8">Institut Teknologi Sepuluh Nopember</div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-4"><strong>Hobbies:</strong></div>
+                                    <div class="col-sm-8">Cybersecurity,  Gaming,  Entrepreneurship</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Description Section -->
+                    <hr class="my-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="description-section">
+                                <h6 class="mb-3"><strong>Description:</strong></h6>
+                                <p class="text-muted mb-0">
+                                    I’m a student leader and a team director, sailing through chaos by creating and managing systems and taking
+                                    decisive initiative. I’ve led 300+ individuals across diverse projects, navigating shifting demands and
+                                    unpredictable tides. While I tend to jump into different oceans, I keep myself afloat and accountable by managing a living priority list
+                                    just as much as I try to stay alive throughout the thunderstorms. I also wrestle with overthinking at times, but I’ve
+                                    learned to trust structured feedback and quick iteration over perfect execution.
+                                </p>
+                                <br>
+                                <p class="text-muted mb-0">
+                                    Throughout my academic journey, I have developed a strong foundation in problem solving, 
+                                    team building and team management, business, and decision-making. I enjoy 
+                                    working on various projects, with a particular interest in 
+                                    creating solutive and scalable solutions and optimizing client experiences.
+                                </p>
+                                <br>
+                                <p class="text-muted mb-0">
+                                    When I'm free, I spend my time either reading manhwas or exploring other hobbies like 
+                                    reading self-improvement books or trying new things. I believe that continuous learning and staying updated with emerging 
+                                    technologies is crucial in the ever-evolving field of computer science. My goal is 
+                                    to contribute to innovative projects that make a positive impact on society.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer fixed-bottom py-3">
+        <div class="container text-center">
+            <span>&copy; 2024 Quiz1WebPro - Web Programming Course Project</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
